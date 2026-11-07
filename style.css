@@ -14,6 +14,7 @@ main{max-width:1200px;margin:0 auto;padding:24px 16px 48px}
 h1{font-size:1.7rem;margin:.2rem 0 .4rem}
 .intro{color:#4b5263;margin:.2rem 0 .6rem}
 .links{font-size:.9rem;margin:0 0 20px}
+.try{font-size:.95rem;margin:0 0 14px;padding:10px 14px;background:#f3f0ff;border-radius:8px}
 .code{margin-top:40px;background:#fff;border:1px solid #e4e7ee;border-radius:10px;padding:16px 20px}
 .code h2{margin:0 0 6px;font-size:1.2rem}
 .code pre{white-space:pre-wrap;word-break:break-all;background:#1d2330;color:#e6e9ef;border-radius:8px;padding:14px;font-size:.78rem;max-height:220px;overflow:auto}
