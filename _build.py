@@ -7,7 +7,7 @@ import os
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = 'https://github.com/arnaudlbdc/swiffle-grid-anywhere'
-VER = '1.17'
+VER = '1.18'
 LOADER = (
     '<script src="https://demo.swiffle-grid.com/wp-content/plugins/swiffle-grid-embed-data-anywhere/js/swiffle_embed_loader.js?v=' + VER + '" '
     'data-src="https://demo.swiffle-grid.com/wp-content/plugins/swiffle-grid-embed-data-anywhere-pro/js/swifflegridpro.js?v=' + VER + '" '
