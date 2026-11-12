@@ -33,14 +33,12 @@ PAGES = [
      'Data from the public PokeAPI, fetched through a custom connector on the WordPress side.'),
     ('france-travail', 'France Travail', 'Job offers from an official API',
      'Job offers from the France Travail API (the French public employment service), through a custom connector.'),
-    ('glimmerlings', 'Glimmerlings', 'Another custom API',
-     'Cards built from a small custom API, through a connector written in PHP on the WordPress side.'),
 ]
 MENU = [p for p in PAGES if p[0] in ('sheets', 'woo', 'rss', 'youtube')]
-API = [p for p in PAGES if p[0] in ('pokeapi', 'france-travail', 'glimmerlings')]
+API = [p for p in PAGES if p[0] in ('pokeapi', 'france-travail')]
 
 
-# Same grid elsewhere: buttons like the ones on demo.swiffle-grid.com (no Pen / Google Site page for Glimmerlings).
+# Same grid elsewhere: buttons like the ones on demo.swiffle-grid.com.
 CODEPEN = {
     'sheets': 'Qwprqbb', 'woo': 'EaWLwmQ', 'rss': 'PwpeJjY', 'youtube': 'KwWbQrG',
     'pokeapi': 'qErYPjy', 'france-travail': 'VYpqQqK',
