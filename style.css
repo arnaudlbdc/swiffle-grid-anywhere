@@ -13,7 +13,10 @@ nav .sub{color:#999;font-size:.85rem;margin-left:6px}
 main{max-width:1200px;margin:0 auto;padding:24px 16px 48px}
 h1{font-size:1.7rem;margin:.2rem 0 .4rem}
 .intro{color:#4b5263;margin:.2rem 0 .6rem}
-.links{font-size:.9rem;margin:0 0 20px}
+.links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;margin:0 0 20px}
+.links a{display:inline-block;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-size:.95rem}
+.links a:hover{opacity:.88}
+.links .b-wp{background:#220d6b}.links .b-cp{background:#1e1f26}.links .b-gs{background:#1a73e8}.links .b-src{background:#57606a}
 .try{font-size:.95rem;margin:0 0 14px;padding:10px 14px;background:#f3f0ff;border-radius:8px}
 .code{margin-top:40px;background:#fff;border:1px solid #e4e7ee;border-radius:10px;padding:16px 20px}
 .code h2{margin:0 0 6px;font-size:1.2rem}

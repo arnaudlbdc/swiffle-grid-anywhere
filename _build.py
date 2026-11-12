@@ -40,6 +40,28 @@ MENU = [p for p in PAGES if p[0] in ('sheets', 'woo', 'rss', 'youtube')]
 API = [p for p in PAGES if p[0] in ('pokeapi', 'france-travail', 'glimmerlings')]
 
 
+# Same grid elsewhere: buttons like the ones on demo.swiffle-grid.com (no Pen / Google Site page for Glimmerlings).
+CODEPEN = {
+    'sheets': 'Qwprqbb', 'woo': 'EaWLwmQ', 'rss': 'PwpeJjY', 'youtube': 'KwWbQrG',
+    'pokeapi': 'qErYPjy', 'france-travail': 'VYpqQqK',
+}
+GSITE_BASE = 'https://sites.google.com/view/swiffle-grid-shop-on-gsheet/'
+GSITE = {
+    'sheets': 'wonders-google-sheet', 'woo': 'swiffle-shop-on-google-site', 'rss': 'new-york-times-rss',
+    'youtube': 'nasa-youtube', 'pokeapi': 'api/pok%C3%A9api', 'france-travail': 'api/france-travail',
+}
+
+
+def links(slug, g, src_file):
+    b = [('b-wp', g['demo'], 'See on the WordPress site')]
+    if slug in CODEPEN:
+        b.append(('b-cp', 'https://codepen.io/swiffle-grid/pen/' + CODEPEN[slug], 'See on CodePen'))
+    if slug in GSITE:
+        b.append(('b-gs', GSITE_BASE + GSITE[slug], 'See on Google Site'))
+    b.append(('b-src', f'{REPO}/blob/main/{src_file}', "View this page's source"))
+    return ''.join(f'<a class="{c}" href="{html.escape(u)}">{html.escape(t)}</a>' for c, u, t in b)
+
+
 def url(slug, prefix):
     return prefix + ('' if slug == 'sheets' else slug + '/')
 
@@ -71,7 +93,7 @@ def page(slug, label, title, intro, grids):
 <main>
 <h1>{html.escape(title)}</h1>
 <p class="intro">{html.escape(intro)}</p>
-<p class="links"><a href="{g['demo']}">Same grid on the WordPress site</a> | <a href="{REPO}/blob/main/{src_file}">View this page's source</a></p>
+<p class="links">{links(slug, g, src_file)}</p>
 <p class="try">Try the settings panel: the grid reloads with each change, and <strong>Copy this embed code</strong> gives you the code with your settings.</p>
 <swiffle-grid data-setup-bar datak="{g['datak']}"></swiffle-grid>
 {BAR}
@@ -105,7 +127,10 @@ nav .sub{color:#999;font-size:.85rem;margin-left:6px}
 main{max-width:1200px;margin:0 auto;padding:24px 16px 48px}
 h1{font-size:1.7rem;margin:.2rem 0 .4rem}
 .intro{color:#4b5263;margin:.2rem 0 .6rem}
-.links{font-size:.9rem;margin:0 0 20px}
+.links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;margin:0 0 20px}
+.links a{display:inline-block;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-size:.95rem}
+.links a:hover{opacity:.88}
+.links .b-wp{background:#220d6b}.links .b-cp{background:#1e1f26}.links .b-gs{background:#1a73e8}.links .b-src{background:#57606a}
 .try{font-size:.95rem;margin:0 0 14px;padding:10px 14px;background:#f3f0ff;border-radius:8px}
 .code{margin-top:40px;background:#fff;border:1px solid #e4e7ee;border-radius:10px;padding:16px 20px}
 .code h2{margin:0 0 6px;font-size:1.2rem}
