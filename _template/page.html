@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} | Swiffle Grid, without WordPress</title>
+<meta name="description" content="{{INTRO}}">
+<link rel="stylesheet" href="{{PREFIX}}style.css?v={{ASSETS_VERSION}}">
+{{LOADER}}
+</head>
+<body>
+<div class="proof">This site is hosted on <strong>GitHub Pages</strong>: plain HTML, no WordPress, no PHP. Every grid comes from <a href="https://demo.swiffle-grid.com/">demo.swiffle-grid.com</a>. <a href="{{REPO}}">See the code</a></div>
+<header><a class="brand" href="{{PREFIX}}">Swiffle Grid <span>anywhere</span></a><nav>{{NAV}}</nav></header>
+<main>
+<h1>{{TITLE}}</h1>
+<p class="intro">{{INTRO}}</p>
+<p class="links">{{BUTTONS}}<button id="toggle" class="b-cust" type="button">⚙ Customize this grid</button></p>
+<p class="try">Click <strong>Customize this grid</strong> to open the settings panel: the grid reloads with each change, and <strong>Copy this embed code</strong> gives you the code with your settings.</p>
+<swiffle-grid data-setup-bar datak="{{DATAK}}"></swiffle-grid>
+{{SETUP_BAR}}
+<section class="code">
+<h2>Code to paste</h2>
+<p>This is all this page contains to show the grid above. Paste it in any HTML page (Webflow, Shopify, Wix, a static site): the script line is needed only once per page.</p>
+<button class="copy" type="button" data-target="code-{{SLUG}}">Copy the code</button>
+<pre id="code-{{SLUG}}">{{SNIPPET}}</pre>
+<p class="note">To show your own grid on your own site, the WordPress site that holds the data must allow the address of the page where you paste the code. <a href="https://swiffle-grid.com/en/understanding-remote-embed-authorization/">How it works</a></p>
+</section>
+</main>
+<footer>Built with <a href="https://wordpress.org/plugins/swiffle-grid-embed-data-anywhere/">Swiffle Grid</a>, free on WordPress.org | <a href="https://swiffle-grid.com/">swiffle-grid.com</a></footer>
+<script src="{{PREFIX}}copy.js?v={{ASSETS_VERSION}}"></script>
+</body>
+</html>

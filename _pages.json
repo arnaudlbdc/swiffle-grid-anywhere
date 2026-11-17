@@ -1,0 +1,60 @@
+{
+  "plugin_version": "1.18",
+  "assets_version": "3",
+  "pages": [
+    {
+      "slug": "sheets",
+      "menu": "Sheets",
+      "group": "main",
+      "title": "A Google Sheet as cards",
+      "intro": "The cards below are rows of a public Google Sheet. Edit a cell in the sheet and this page shows the change on the next load.",
+      "codepen": "Qwprqbb",
+      "google_site": "wonders-google-sheet"
+    },
+    {
+      "slug": "woo",
+      "menu": "Woo",
+      "group": "main",
+      "title": "A WooCommerce shop on a site without WordPress",
+      "intro": "Products, prices, options and the cart come from the WooCommerce shop of demo.swiffle-grid.com. Checkout happens on that shop.",
+      "codepen": "EaWLwmQ",
+      "google_site": "swiffle-shop-on-google-site"
+    },
+    {
+      "slug": "rss",
+      "menu": "RSS",
+      "group": "main",
+      "title": "An RSS feed as cards",
+      "intro": "The latest articles of The New York Times RSS feed, shown as cards and kept up to date.",
+      "codepen": "PwpeJjY",
+      "google_site": "new-york-times-rss"
+    },
+    {
+      "slug": "youtube",
+      "menu": "YouTube",
+      "group": "main",
+      "title": "A YouTube channel as cards",
+      "intro": "The latest videos of the NASA Goddard YouTube channel, read from its public feed. A click plays the video.",
+      "codepen": "KwWbQrG",
+      "google_site": "nasa-youtube"
+    },
+    {
+      "slug": "pokeapi",
+      "menu": "PokeAPI",
+      "group": "api",
+      "title": "A public REST API as cards",
+      "intro": "Data from the public PokeAPI, fetched through a custom connector on the WordPress side.",
+      "codepen": "qErYPjy",
+      "google_site": "api/pok%C3%A9api"
+    },
+    {
+      "slug": "france-travail",
+      "menu": "France Travail",
+      "group": "api",
+      "title": "Job offers from an official API",
+      "intro": "Job offers from the France Travail API (the French public employment service), through a custom connector.",
+      "codepen": "VYpqQqK",
+      "google_site": "api/france-travail"
+    }
+  ]
+}

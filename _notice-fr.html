@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Notice : modifier le site anywhere.swiffle-grid.com</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;max-width:820px;margin:30px auto;padding:0 16px;color:#1d2330;line-height:1.55}
+h1{color:#220d6b}h2{color:#4b3bd6;margin-top:28px}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid #e4e7ee;padding:8px;text-align:left;vertical-align:top}th{background:#f3f0ff}
+code{background:#f3f0ff;padding:1px 5px;border-radius:4px}
+.box{background:#fff8ec;border-left:4px solid #f9ab00;padding:10px 14px;margin:14px 0}
+</style>
+</head>
+<body>
+<h1>Modifier le site anywhere.swiffle-grid.com</h1>
+<p>Dossier : <code>C:\DEVS\swiffle-grid-anywhere</code>. Le site contient 6 pages de démonstration, toutes faites sur le même modèle.</p>
+
+<h2>Quel fichier modifier ?</h2>
+<table>
+<tr><th>Je veux changer…</th><th>Fichier à ouvrir</th><th>Ensuite</th></tr>
+<tr><td>Un texte ou un bouton présent sur toutes les pages (bandeau du haut, phrase d'aide, bloc « Code to paste », pied de page)</td><td><code>_template/page.html</code></td><td>Lancer le programme (voir plus bas)</td></tr>
+<tr><td>Le titre, la phrase d'intro ou le nom dans le menu d'une démo ; son lien CodePen ou Google Site ; ajouter une démo</td><td><code>_pages.json</code></td><td>Lancer le programme</td></tr>
+<tr><td>Les couleurs, tailles, marges (le style)</td><td><code>style.css</code></td><td>Rien à lancer. Changer aussi <code>assets_version</code> dans <code>_pages.json</code> (3 devient 4…) puis lancer le programme, pour que les navigateurs rechargent le style.</td></tr>
+<tr><td>Le comportement des boutons « Copy the code » et « Customize this grid »</td><td><code>copy.js</code></td><td>Même chose que pour <code>style.css</code></td></tr>
+<tr><td>Le code d'une grille</td><td><code>_grids.json</code></td><td>Lancer le programme</td></tr>
+<tr><td>La version du plugin chargée depuis demo</td><td><code>plugin_version</code> dans <code>_pages.json</code></td><td>Lancer le programme</td></tr>
+</table>
+
+<div class="box">Ne jamais modifier directement <code>index.html</code> ni les <code>index.html</code> des sous-dossiers : le programme les réécrit à chaque lancement et la modification serait perdue.</div>
+
+<h2>Dans le modèle, les repères {{...}}</h2>
+<p>Dans <code>_template/page.html</code>, les mots entre doubles accolades sont remplacés automatiquement pour chaque page : <code>{{TITLE}}</code> (titre), <code>{{INTRO}}</code> (phrase d'intro), <code>{{NAV}}</code> (menu), <code>{{BUTTONS}}</code> (boutons WordPress, CodePen, Google Site, source), <code>{{DATAK}}</code> (la grille), <code>{{SNIPPET}}</code> (le code à coller). Tout le reste est du HTML ordinaire, modifiable librement.</p>
+
+<h2>Lancer le programme</h2>
+<p>Dans un terminal ouvert dans le dossier : <code>python _build.py</code>. Il affiche « ok 6 pages ».</p>
+
+<h2>Publier</h2>
+<p>Le site est publié par GitHub Pages depuis le dépôt public <code>arnaudlbdc/swiffle-grid-anywhere</code>, sous l'identité d'Arnaud :</p>
+<p><code>git add -A</code><br><code>git -c user.name=Arnaud -c user.email=arnaud.lbdc@proton.me commit -m "…"</code><br><code>gh auth switch -u arnaudlbdc</code> puis <code>gh auth setup-git</code><br><code>git push</code><br><code>gh auth switch -u nicolasflbdc</code> (pour revenir au compte habituel)</p>
+<p>La mise en ligne prend une à deux minutes.</p>
+
+<p>Les fichiers dont le nom commence par « _ » (ce document, le programme, le modèle, les listes) ne sont pas publiés sur le site.</p>
+</body>
+</html>
