@@ -82,7 +82,7 @@ def page(slug, label, title, intro, grids):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{html.escape(title)} | Swiffle Grid, without WordPress</title>
 <meta name="description" content="{html.escape(intro)}">
-<link rel="stylesheet" href="{prefix}style.css">
+<link rel="stylesheet" href="{prefix}style.css?v=2">
 {LOADER}
 </head>
 <body>
@@ -104,7 +104,7 @@ def page(slug, label, title, intro, grids):
 </section>
 </main>
 <footer>Built with <a href="https://wordpress.org/plugins/swiffle-grid-embed-data-anywhere/">Swiffle Grid</a>, free on WordPress.org | <a href="https://swiffle-grid.com/">swiffle-grid.com</a></footer>
-<script src="{prefix}copy.js"></script>
+<script src="{prefix}copy.js?v=2"></script>
 </body>
 </html>
 '''
