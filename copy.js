@@ -6,3 +6,12 @@ document.querySelectorAll('button.copy').forEach(function (b) {
     });
   });
 });
+// Show or hide the grid settings panel.
+(function () {
+  var t = document.getElementById('toggle');
+  if (!t) return;
+  t.addEventListener('click', function () {
+    var open = document.body.classList.toggle('panel-open');
+    t.textContent = open ? '\u2715 Hide settings' : '\u2699 Customize this grid';
+  });
+})();

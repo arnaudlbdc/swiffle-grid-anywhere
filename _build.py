@@ -82,7 +82,7 @@ def page(slug, label, title, intro, grids):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{html.escape(title)} | Swiffle Grid, without WordPress</title>
 <meta name="description" content="{html.escape(intro)}">
-<link rel="stylesheet" href="{prefix}style.css?v=2">
+<link rel="stylesheet" href="{prefix}style.css?v=3">
 {LOADER}
 </head>
 <body>
@@ -104,7 +104,7 @@ def page(slug, label, title, intro, grids):
 </section>
 </main>
 <footer>Built with <a href="https://wordpress.org/plugins/swiffle-grid-embed-data-anywhere/">Swiffle Grid</a>, free on WordPress.org | <a href="https://swiffle-grid.com/">swiffle-grid.com</a></footer>
-<script src="{prefix}copy.js?v=2"></script>
+<script src="{prefix}copy.js?v=3"></script>
 </body>
 </html>
 '''
@@ -136,6 +136,8 @@ h1{font-size:1.7rem;margin:.2rem 0 .4rem}
 .copy{background:#6c5cf2;color:#fff;border:0;border-radius:6px;padding:8px 14px;font-size:.95rem;cursor:pointer}
 .note{font-size:.88rem;color:#5d6675}
 footer{text-align:center;font-size:.85rem;color:#777;padding:24px 16px}
+.links .b-cust{background:#10d8e4;color:#2b1a7a;border:0;border-radius:6px;padding:8px 14px;font-size:.95rem;font-weight:600;cursor:pointer}
+body:not(.panel-open) swiffle-setup-bar{display:none !important}
 '''
 
 JS = '''document.querySelectorAll('button.copy').forEach(function (b) {
@@ -146,6 +148,15 @@ JS = '''document.querySelectorAll('button.copy').forEach(function (b) {
     });
   });
 });
+// Show or hide the grid settings panel.
+(function () {
+  var t = document.getElementById('toggle');
+  if (!t) return;
+  t.addEventListener('click', function () {
+    var open = document.body.classList.toggle('panel-open');
+    t.textContent = open ? '\\u2715 Hide settings' : '\\u2699 Customize this grid';
+  });
+})();
 '''
 
 
