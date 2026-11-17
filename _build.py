@@ -57,7 +57,7 @@ def links(slug, g, src_file):
     if slug in GSITE:
         b.append(('b-gs', GSITE_BASE + GSITE[slug], 'See on Google Site'))
     b.append(('b-src', f'{REPO}/blob/main/{src_file}', "View this page's source"))
-    return ''.join(f'<a class="{c}" href="{html.escape(u)}">{html.escape(t)}</a>' for c, u, t in b)
+    return ''.join(f'<a class="{c}" href="{html.escape(u)}">{html.escape(t)}</a>' for c, u, t in b)         + '<button id="toggle" class="b-cust" type="button">⚙ Customize this grid</button>'
 
 
 def url(slug, prefix):
@@ -92,7 +92,7 @@ def page(slug, label, title, intro, grids):
 <h1>{html.escape(title)}</h1>
 <p class="intro">{html.escape(intro)}</p>
 <p class="links">{links(slug, g, src_file)}</p>
-<p class="try">Try the settings panel: the grid reloads with each change, and <strong>Copy this embed code</strong> gives you the code with your settings.</p>
+<p class="try">Click <strong>Customize this grid</strong> to open the settings panel: the grid reloads with each change, and <strong>Copy this embed code</strong> gives you the code with your settings.</p>
 <swiffle-grid data-setup-bar datak="{g['datak']}"></swiffle-grid>
 {BAR}
 <section class="code">
